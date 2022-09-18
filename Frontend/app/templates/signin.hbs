@@ -1,0 +1,28 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="signin.css" />
+</head>
+<h1 class="heading">Manage your Work</h1>
+<form>
+  <div class="imgcontainer">
+    <img
+      src="https://d12y7sg0iam4lc.cloudfront.net/s/img/marketing/top-todo-app/to-do-list.png"
+      alt="Avatar"
+      class="avatar"
+    />
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Email:</b></label>
+    <input type="text" placeholder="Enter Email" name="uname" required />
+
+    <label for="psw"><b>Password:</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required />
+
+    <button type="submit">Login</button>
+    <div class="container" style="background-color:#f1f1f1">
+      Create your Account {{#link-to "signup"}} Sign Up Here {{/link-to}}
+    </div>
+  </div>
+</form>

@@ -1,0 +1,14 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Todo Manager</title>
+  <link rel="stylesheet" type="text/css" href="./home-page.css" />
+  <link rel="stylesheet" type="text/css" href="reset.css" />
+</head>
+<h1 class="main-heading">Your Todo Manager</h1>
+<h3 class="heading">We Help you Manage your Tasks</h3>
+<div class="imgcontainer">
+  {{#link-to "signin" class="alinks"}}LOGIN{{/link-to}}
+  {{#link-to "signup" class="alinks"}}REGISTER{{/link-to}}
+</div>
+{{outlet}}
