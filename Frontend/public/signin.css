@@ -35,9 +35,9 @@ form {
     background-color: #f44336;
   }
   .heading{
-    color: black;
+    color: #02006c;
     font-size: 48px;
-    margin: -6px auto;
+    margin: 30px auto;
     max-width: 420px;
     font-weight: bolder;
   }
@@ -56,6 +56,9 @@ form {
   /* Add padding to containers */
   .container {
     padding: 16px;
+    color: #f14182;
+    font-size: medium;
+    font-weight: bold;
   }
   
   /* The "Forgot password" text */

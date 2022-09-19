@@ -1,1 +1,32 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CRUD Application</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link type="text/css" rel="stylesheet" href="todo-app.css" />
+  {{! <link type="text/css" rel="stylesheet" href="style.css" /> }}
+  <link rel="stylesheet" href="reset.css" />
+</head>
+<div class="container">
+  <div class="container-section">
+    <form class="create-todo-form">
+      <input
+        type="text"
+        name="todo_name"
+        id="new-todo"
+        placeholder="What's Next"
+        required
+      />
+      <input type="date" name="due_date" placeholder=" Enter Date" />
+      <button type="submit">Add Todo</button>
+    </form>
+  </div>
+  {{todo-section}}
+  {{todo-section}}
+</div>
 {{outlet}}

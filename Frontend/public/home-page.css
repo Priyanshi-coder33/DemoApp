@@ -41,9 +41,9 @@ button:hover {
 }
 
 .heading {
-  color: rgb(66, 66, 66);
+  color: #02006c;
   font-size: 40px;
-  margin: 0px auto;
+  margin: 30px auto;
   max-width: 563px;
   font-weight: bolder;
 }
@@ -63,8 +63,8 @@ button:hover {
 }
 
 .alinks {
-  background-color: white;
-  color: aqua;
+  color: white;
+  background-color: #f14182;
   border-radius: 10px;
 }
 
