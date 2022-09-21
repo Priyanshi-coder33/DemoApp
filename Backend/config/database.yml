@@ -12,7 +12,7 @@ default: &default
 development:
   <<: *default
   host: localhost
-  user: anshi
+  user: postgres
   password: Priyanshi03
   database: bootcamp
 
