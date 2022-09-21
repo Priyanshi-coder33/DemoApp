@@ -9,7 +9,7 @@
     rel="stylesheet"
   />
   <link type="text/css" rel="stylesheet" href="todo-app.css" />
-  {{! <link type="text/css" rel="stylesheet" href="style.css" /> }}
+  {<link type="text/css" rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="reset.css" />
 </head>
 <div class="container">
@@ -18,11 +18,11 @@
       <input
         type="text"
         name="todo_name"
-        id="new-todo"
+        class="input-todo"
         placeholder="What's Next"
         required
       />
-      <input type="date" name="due_date" placeholder=" Enter Date" />
+      <input type="date" name="due_date" placeholder=" Enter Date" class="input-todo" />
       <button type="submit">Add Todo</button>
     </form>
   </div>
