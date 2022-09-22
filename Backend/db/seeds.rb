@@ -5,4 +5,6 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Todo.delete_all
+ActiveRecord::Base.connection.execute("ALTER SEQUENCE todos_id_seq RESTART WITH 1")
 Todo.create(todo_text:"Buy groccery",due_date:Date.today+2,status:false)

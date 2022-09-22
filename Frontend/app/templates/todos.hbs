@@ -14,22 +14,22 @@
 </head>
 <div class="container">
   <div class="container-section">
-    {{form class="create-todo-form"}}>
-      <input
+    <form class="create-todo-form">
+      {{input
         type="text"
-        name="todo_name"
-        class="input-todo"
         placeholder="What's Next"
-        required
-      />
-      <input
-        type="date"
-        name="due_date"
-        placeholder=" Enter Date"
+        value=todo_text
         class="input-todo"
-      />
-      <button {{on "submit"action "AddTodo"}}>Add Todo</button>
-    {{/form}}
+      }}
+
+      {{input
+        type="date"
+        placeholder=" Enter Date"
+        value=due_date
+        class="input-todo"
+      }}
+      <button type="submit" {{action "AddTodo" }}>Add Todo</button>
+    </form>
   </div>
   {{#each model as |todoUnit|}}
     {{todo-section todo=todoUnit}}

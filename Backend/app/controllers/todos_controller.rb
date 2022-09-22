@@ -1,7 +1,7 @@
 class TodosController < ApplicationController
-  before_action :set_todo, only: %i[ show update destroy ]
-
-  # GET /todos
+  # before_action :set_todo, only: %i[ show update create destroy ]
+  # skip_before_action :verify_authenticity_token
+  #  GET /todos
   def index
     @todos = Todo.all
 
@@ -14,28 +14,42 @@ class TodosController < ApplicationController
   end
 
   # POST /todos
-  def create
-    @todo = Todo.new(todo_params)
+  # def create
+  #   @todo = Todo.new(todo_params)
 
-    if @todo.save
-      render json: @todo, status: :created, location: @todo
-    else
-      render json: @todo.errors, status: :unprocessable_entity
-    end
+  #   if @todo.save
+  #     @todos = Todo.all
+  #     render json: @todos
+  #   else
+  #     render json: @todo.errors, status: :unprocessable_entity
+  #   end
+  # end
+  def create
+    @new_todo = Todo.create(todo_text:params["todo"]["todo_text"],due_date:params["todo"]["due_date"],status:false);
   end
 
   # PATCH/PUT /todos/1
+  # def update
+  #   if @todo.update(todo_params)
+  #     render json: @todo
+  #   else
+  #     render json: @todo.errors, status: :unprocessable_entity
+  #   end
+  # end
   def update
-    if @todo.update(todo_params)
-      render json: @todo
+    @todo = Todo.find(params[:id])
+    if(@todo.status)
+      @todo.status = false;
     else
-      render json: @todo.errors, status: :unprocessable_entity
+      @todo.status = true;
     end
   end
 
   # DELETE /todos/1
   def destroy
+    @todo = Todo.find(params[:id])
     @todo.destroy
+    # ActiveRecord::Base.connection.execute("ALTER SEQUENCE todos_id_seq RESTART WITH #{params[:id]}")
   end
 
   private

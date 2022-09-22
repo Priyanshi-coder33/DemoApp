@@ -1,11 +1,18 @@
 <div class="todo-container">
-  <div class="todos" style="display:flex;">
-    <input style="margin-bottom:12px" type="checkbox" />
-    <p>{{todo.todo_text}} <span style="color:rgba(157, 39, 39, 0.759)">{{todo.due_date}}</span></p>
-    <ul class="crud-buttons">
-      {{! <li><a href="complete_todo" id="complete-todo">Completed</a></li> }}
-      <li><a href="delete_todo" id="delete-todo">Delete</a></li>
-    </ul>
+  <div class="todos">
+    <input
+      style="margin-bottom:12px"
+      id="checkbox"
+      type="checkbox"
+      checked={{todo.status}}
+      onclick={{action "Changestatus" todo}}
+    />
+    <p id="todo_text">
+      {{todo.todo_text}}
+      <span style="color:rgba(157, 39, 39, 0.759)">{{todo.due_date}}</span></p>
+    <button id="delete_todo" {{action "DeleteTodo" todo}}>
+        Delete
+    </button>
   </div>
 </div>
 {{yield}}
