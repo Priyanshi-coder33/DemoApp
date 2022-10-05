@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-  # before_action :set_todo, only: %i[ show update create destroy ]
+  before_action :set_todo, only: %i[ show update create destroy ]
   # skip_before_action :verify_authenticity_token
   skip_before_action :set_current_user, :authenticate_request
   #  GET /todos
@@ -32,9 +32,9 @@ class TodosController < ApplicationController
   def update
     @todo = Todo.find(params[:id])
     if(@todo.status)
-      @todo.status = false;
+      @todo.update(status: params["todo"]["status"]);
     else
-      @todo.status = true;
+      @todo.update(status: params["todo"]["status"]);
     end
   end
 

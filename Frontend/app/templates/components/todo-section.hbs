@@ -5,7 +5,7 @@
       id="checkbox"
       type="checkbox"
       checked={{todo.status}}
-      onclick={{action "Changestatus" todo}}
+      onclick={{action "Changestatus" todo preventDefault=false}}
     />
     <p id="todo_text">
       {{todo.todo_text}}
