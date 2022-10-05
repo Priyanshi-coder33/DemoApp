@@ -12,13 +12,16 @@ export default Ember.Component.extend({
             }
         },
         Changestatus(event,todo){
-            // event.preventDefault();
-            if(todo.status=true){
-                this.set(todo.status,"false");
-            }
-            else{
-                this.set(todo.status,"true");
-            }
+            this.get('store').findRecord('todo', 2).then(function(task) {
+                // ...after the record has loaded
+                if(todo.status==true){
+                    task.set('status', false);
+                }
+                else{
+                    task.set('status',true);
+                }
+                task.save();
+            });
         }
     }
 });

@@ -1,6 +1,7 @@
 class TodosController < ApplicationController
   # before_action :set_todo, only: %i[ show update create destroy ]
   # skip_before_action :verify_authenticity_token
+  skip_before_action :set_current_user, :authenticate_request
   #  GET /todos
   def index
     @todos = Todo.all
@@ -14,18 +15,10 @@ class TodosController < ApplicationController
   end
 
   # POST /todos
-  # def create
-  #   @todo = Todo.new(todo_params)
-
-  #   if @todo.save
-  #     @todos = Todo.all
-  #     render json: @todos
-  #   else
-  #     render json: @todo.errors, status: :unprocessable_entity
-  #   end
-  # end
   def create
     @new_todo = Todo.create(todo_text:params["todo"]["todo_text"],due_date:params["todo"]["due_date"],status:false);
+    # @todo = Todo.all
+    # render json: @todo
   end
 
   # PATCH/PUT /todos/1

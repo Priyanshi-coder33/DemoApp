@@ -12,6 +12,7 @@ export default Ember.Controller.extend({
             });
             // alert("Hi I am -in action")
             task.save();
+            return this.get('store').findAll('todo')
         }
     }
 });

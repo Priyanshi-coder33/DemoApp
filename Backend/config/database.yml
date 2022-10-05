@@ -12,8 +12,8 @@ default: &default
 development:
   <<: *default
   host: localhost
-  user: postgres
-  password: Priyanshi03
+  user: anshi
+  password: Anshi
   database: bootcamp
 
 # Warning: The database defined as "test" will be erased and
